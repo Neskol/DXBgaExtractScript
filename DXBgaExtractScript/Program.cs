@@ -13,16 +13,16 @@ namespace SegaSegaHaveALookAtHere
             string? moviePath = Console.ReadLine();
             if (moviePath == null || moviePath.Equals(""))
             {
-                moviePath = "";
+                moviePath = @"C:\MUG\maimai\SDEZ1.17\Package\Sinmai_Data\StreamingAssets\A000\MovieData\";
             }
             Console.WriteLine("Enter Tool location.");
             string? toolPath = Console.ReadLine();
             if (toolPath == null || toolPath.Equals(""))
             {
-                toolPath = "";
+                toolPath = @"C:\CRID(.usm)Demux Tool v1.02-mod\";
             }
 
-            string[] data = Directory.GetFiles(moviePath);
+            string[] data = Directory.GetFiles(moviePath,"*.dat");
 
             Process crid = new Process();
             crid.StartInfo.FileName = "C:\\Windows\\System32\\cmd.exe";
@@ -31,10 +31,10 @@ namespace SegaSegaHaveALookAtHere
             crid.StartInfo.RedirectStandardError = true;
             crid.StartInfo.CreateNoWindow = false;
             crid.Start();
-            crid.StandardInput.WriteLine(toolPath);
+            crid.StandardInput.WriteLine("cd "+ toolPath);           
             foreach (string movie in data)
             {
-                crid.StandardInput.WriteLine(argument + "\""+movie+"\"");
+                crid.StandardInput.WriteLine(argument + "\"" + movie + "\"");
             }
             crid.StandardInput.WriteLine("exit");
             crid.Close();
