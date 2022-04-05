@@ -6,22 +6,20 @@ namespace SegaSegaHaveALookAtHere
 {
     public class Program
     {
-<<<<<<< HEAD
-        public const string argument = @".\crid_mod.exe -b 7F455149 -a 9DF55E68 -v ";
-        public void Main()
-        {
-            Console.WriteLine("Enter MovieData location.");
-            string? moviePath = Console.ReadLine();
-            if (moviePath==null||moviePath.Equals(""))
-            {
-                moviePath = "";
-            }
+        // public const string argument = @".\crid_mod.exe -b 7F455149 -a 9DF55E68 -v ";
+        // public void Main()
+        // {
+        //     Console.WriteLine("Enter MovieData location.");
+        //     string? moviePath = Console.ReadLine();
+        //     if (moviePath==null||moviePath.Equals(""))
+        //     {
+        //         moviePath = "";
+        //     }
 
-            string[] data = Directory.GetFiles(moviePath);
+        //     string[] data = Directory.GetFiles(moviePath);
 
-            Process crid = new Process();
-            crid.StartInfo.FileName = "cmd";
-=======
+        //     Process crid = new Process();
+        //     crid.StartInfo.FileName = "cmd";
         public const string argument = ".\\crid_mod.exe -b \"7F455149\" -a \"9DF55E68\" -v ";
         public static void Main()
         {
@@ -42,22 +40,14 @@ namespace SegaSegaHaveALookAtHere
 
             Process crid = new Process();
             crid.StartInfo.FileName = "C:\\Windows\\System32\\cmd.exe";
->>>>>>> cd20a44907bfcde2f1852239e493b91341d50609
             crid.StartInfo.UseShellExecute = false;
             crid.StartInfo.RedirectStandardInput = true;
             crid.StartInfo.RedirectStandardError = true;
             crid.StartInfo.CreateNoWindow = false;
-            crid.Start();
-<<<<<<< HEAD
-            foreach (string movie in data)
-            {
-                crid.StandardInput.WriteLine(argument+movie);
-=======
-            crid.StandardInput.WriteLine("cd "+ toolPath);           
+            crid.Start();     
             foreach (string movie in data)
             {
                 crid.StandardInput.WriteLine(argument + "\"" + movie + "\"");
->>>>>>> cd20a44907bfcde2f1852239e493b91341d50609
             }
             crid.StandardInput.WriteLine("exit");
             crid.Close();
