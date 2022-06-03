@@ -44,7 +44,8 @@ namespace SegaSegaHaveALookAtHere
             crid.StartInfo.RedirectStandardInput = true;
             crid.StartInfo.RedirectStandardError = true;
             crid.StartInfo.CreateNoWindow = false;
-            crid.Start();     
+            crid.Start();
+            crid.StandardInput.WriteLine("cd "+toolPath);
             foreach (string movie in data)
             {
                 crid.StandardInput.WriteLine(argument + "\"" + movie + "\"");
