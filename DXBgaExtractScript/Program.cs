@@ -27,13 +27,13 @@ namespace SegaSegaHaveALookAtHere
             string? moviePath = Console.ReadLine();
             if (moviePath == null || moviePath.Equals(""))
             {
-                moviePath = @"C:\MUG\maimai\SDEZ1.17\Package\Sinmai_Data\StreamingAssets\A000\MovieData\";
+                moviePath = @"C:\Users\Neskol\MaiAnalysis\DXBGA-1.30";
             }
             Console.WriteLine("Enter Tool location.");
             string? toolPath = Console.ReadLine();
             if (toolPath == null || toolPath.Equals(""))
             {
-                toolPath = @"C:\CRID(.usm)Demux Tool v1.02-mod\";
+                toolPath = @"C:\MUG\CRID_NEW\";
             }
 
             string[] data = Directory.GetFiles(moviePath,"*.dat");
